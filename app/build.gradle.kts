@@ -1,42 +1,33 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.materialproductivity.android.application)
+    alias(libs.plugins.materialproductivity.android.application.compose)
+    alias(libs.plugins.materialproductivity.koin)
 }
 
 android {
-    namespace = "dev.stekl0.materialproductivity"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
 
     defaultConfig {
         applicationId = "dev.stekl0.materialproductivity"
-        minSdk = 29
-        targetSdk = 36
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.0.1" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+        }
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    buildFeatures {
-        compose = true
-    }
+    namespace = "dev.stekl0.materialproductivity"
 }
 
 dependencies {
