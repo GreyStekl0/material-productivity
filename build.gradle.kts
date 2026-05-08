@@ -4,4 +4,5 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.detekt) apply false
     alias(libs.plugins.kotlinter) apply false
+    alias(libs.plugins.koin.compiler) apply false
 }

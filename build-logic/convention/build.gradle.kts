@@ -72,6 +72,13 @@ gradlePlugin {
                     .pluginId
             implementationClass = "JvmLibraryConventionPlugin"
         }
+        register("koin") {
+            id =
+                libs.plugins.materialproductivity.koin
+                    .get()
+                    .pluginId
+            implementationClass = "KoinConventionPlugin"
+        }
         register("lint") {
             id =
                 libs.plugins.materialproductivity.lint
