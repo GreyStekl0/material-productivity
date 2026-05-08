@@ -31,10 +31,6 @@ internal fun Project.configureKotlinAndroid(commonExtension: CommonExtension) {
     }
 
     configureKotlin<KotlinAndroidProjectExtension>()
-
-    dependencies {
-        "coreLibraryDesugaring"(libs.findLibrary("android.desugarJdkLibs").get())
-    }
 }
 
 /**
