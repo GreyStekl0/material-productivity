@@ -24,6 +24,8 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.detekt.gradlePlugin)
+    compileOnly(libs.ksp.gradlePlugin)
+    compileOnly(libs.room.gradlePlugin)
 }
 
 tasks {
@@ -64,6 +66,13 @@ gradlePlugin {
                     .get()
                     .pluginId
             implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidRoom") {
+            id =
+                libs.plugins.materialproductivity.android.room
+                    .get()
+                    .pluginId
+            implementationClass = "AndroidRoomConventionPlugin"
         }
         register("jvmLibrary") {
             id =
