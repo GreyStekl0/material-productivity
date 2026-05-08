@@ -19,9 +19,26 @@ kotlin {
     }
 }
 
+dependencies {
+    compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.detekt.gradlePlugin)
+}
+
 tasks {
     validatePlugins {
         enableStricterValidation = true
         failOnWarning = true
+    }
+}
+
+gradlePlugin {
+    plugins {
+        register("lint") {
+            id =
+                libs.plugins.materialproductivity.lint
+                    .get()
+                    .pluginId
+            implementationClass = "LintConventionPlugin"
+        }
     }
 }
