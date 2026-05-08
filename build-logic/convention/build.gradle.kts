@@ -65,6 +65,13 @@ gradlePlugin {
                     .pluginId
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("jvmLibrary") {
+            id =
+                libs.plugins.materialproductivity.jvm.library
+                    .get()
+                    .pluginId
+            implementationClass = "JvmLibraryConventionPlugin"
+        }
         register("lint") {
             id =
                 libs.plugins.materialproductivity.lint
