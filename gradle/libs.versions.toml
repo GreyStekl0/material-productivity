@@ -44,5 +44,6 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 
 # Plugins defined by this project
+materialproductivity-android-application = { id = "materialproductivity.android.application" }
 materialproductivity-lint = { id = "materialproductivity.lint" }
 
