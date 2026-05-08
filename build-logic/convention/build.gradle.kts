@@ -22,6 +22,7 @@ kotlin {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.detekt.gradlePlugin)
 }
 
@@ -37,9 +38,17 @@ gradlePlugin {
         register("androidApplication") {
             id =
                 libs.plugins.materialproductivity.android.application
+                    .asProvider()
                     .get()
                     .pluginId
             implementationClass = "AndroidApplicationConventionPlugin"
+        }
+        register("androidApplicationCompose") {
+            id =
+                libs.plugins.materialproductivity.android.application.compose
+                    .get()
+                    .pluginId
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("lint") {
             id =
