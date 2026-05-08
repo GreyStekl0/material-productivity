@@ -65,7 +65,7 @@ gradlePlugin {
                 libs.plugins.materialproductivity.android.library.compose
                     .get()
                     .pluginId
-            implementationClass = "AndroidLibraryConventionPlugin"
+            implementationClass = "AndroidLibraryConventionComposePlugin"
         }
         register("androidFeatureImpl") {
             id =
