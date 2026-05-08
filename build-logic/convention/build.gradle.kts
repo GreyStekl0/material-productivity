@@ -53,6 +53,14 @@ gradlePlugin {
         register("androidLibrary") {
             id =
                 libs.plugins.materialproductivity.android.library
+                    .asProvider()
+                    .get()
+                    .pluginId
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidLibraryCompose") {
+            id =
+                libs.plugins.materialproductivity.android.library.compose
                     .get()
                     .pluginId
             implementationClass = "AndroidLibraryConventionPlugin"

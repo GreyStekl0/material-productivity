@@ -48,5 +48,6 @@ kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 materialproductivity-android-application = { id = "materialproductivity.android.application" }
 materialproductivity-android-application-compose = { id = "materialproductivity.android.application.compose" }
 materialproductivity-android-library = { id = "materialproductivity.android.library" }
+materialproductivity-android-library-compose = { id = "materialproductivity.android.library.compose" }
 materialproductivity-lint = { id = "materialproductivity.lint" }
 
