@@ -50,6 +50,13 @@ gradlePlugin {
                     .pluginId
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
+        register("androidLibrary") {
+            id =
+                libs.plugins.materialproductivity.android.library
+                    .get()
+                    .pluginId
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
         register("lint") {
             id =
                 libs.plugins.materialproductivity.lint

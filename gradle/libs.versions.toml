@@ -47,5 +47,6 @@ kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 # Plugins defined by this project
 materialproductivity-android-application = { id = "materialproductivity.android.application" }
 materialproductivity-android-application-compose = { id = "materialproductivity.android.application.compose" }
+materialproductivity-android-library = { id = "materialproductivity.android.library" }
 materialproductivity-lint = { id = "materialproductivity.lint" }
 
