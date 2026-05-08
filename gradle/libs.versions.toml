@@ -68,6 +68,7 @@ materialproductivity-android-application = { id = "materialproductivity.android.
 materialproductivity-android-application-compose = { id = "materialproductivity.android.application.compose" }
 materialproductivity-android-library = { id = "materialproductivity.android.library" }
 materialproductivity-android-library-compose = { id = "materialproductivity.android.library.compose" }
+materialproductivity-android-feature-api = { id = "materialproductivity.android.feature.api" }
 materialproductivity-jvm-library = { id = "materialproductivity.jvm.library" }
 materialproductivity-koin = { id = "materialproductivity.koin" }
 materialproductivity-lint = { id = "materialproductivity.lint" }
