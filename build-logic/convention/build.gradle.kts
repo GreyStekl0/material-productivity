@@ -67,6 +67,13 @@ gradlePlugin {
                     .pluginId
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("androidFeatureImpl") {
+            id =
+                libs.plugins.materialproductivity.android.feature.impl
+                    .get()
+                    .pluginId
+            implementationClass = "AndroidFeatureImplConventionPlugin"
+        }
         register("androidFeatureApi") {
             id =
                 libs.plugins.materialproductivity.android.feature.api

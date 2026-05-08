@@ -25,7 +25,7 @@ class KoinConventionPlugin : Plugin<Project> {
             /** Add support for Android modules, based on [AndroidBasePlugin] */
             pluginManager.withPlugin("com.android.base") {
                 dependencies {
-                    "implementation"(libs.findBundle("koin-android").get())
+                    "implementation"(libs.findLibrary("koin-android").get())
                 }
             }
         }

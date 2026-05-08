@@ -16,6 +16,7 @@ koin-bom = "4.2.1"
 koin-compiler = "0.6.2"
 ksp = "2.3.7"
 room = "2.8.4"
+nav3 = "1.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,11 +40,11 @@ koin-android = { group = "io.insert-koin", name = "koin-android" }
 koin-annotations = { group = "io.insert-koin", name = "koin-annotations" }
 koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin-bom" }
 koin-compose = { group = "io.insert-koin", name = "koin-compose" }
-koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel" }
 koin-core = { group = "io.insert-koin", name = "koin-core" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-navigation3-runtime = { group = "androidx.navigation3", name = "navigation3-runtime", version.ref = "nav3" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "agp" }
@@ -68,15 +69,9 @@ materialproductivity-android-application = { id = "materialproductivity.android.
 materialproductivity-android-application-compose = { id = "materialproductivity.android.application.compose" }
 materialproductivity-android-library = { id = "materialproductivity.android.library" }
 materialproductivity-android-library-compose = { id = "materialproductivity.android.library.compose" }
+materialproductivity-android-feature-impl = { id = "materialproductivity.android.feature.impl" }
 materialproductivity-android-feature-api = { id = "materialproductivity.android.feature.api" }
 materialproductivity-jvm-library = { id = "materialproductivity.jvm.library" }
 materialproductivity-koin = { id = "materialproductivity.koin" }
 materialproductivity-lint = { id = "materialproductivity.lint" }
 materialproductivity-android-room = { id = "materialproductivity.android.room" }
-
-[bundles]
-koin-android = [
-    "koin-android",
-    "koin-compose",
-    "koin-compose-viewmodel"
-]
