@@ -14,6 +14,7 @@ abstract class AndroidLibraryConventionPlugin : Plugin<Project> {
         with(target) {
             apply(plugin = "com.android.library")
             apply(plugin = "materialproductivity.lint")
+            apply(plugin = "de.mannodermaus.android-junit")
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
@@ -35,11 +36,12 @@ abstract class AndroidLibraryConventionPlugin : Plugin<Project> {
                 disableUnnecessaryAndroidTests(target)
             }
             dependencies {
-                "androidTestImplementation"(libs.findLibrary("kotlin.test").get())
-                "testImplementation"(libs.findLibrary("kotlin.test").get())
-                "testImplementation"(libs.findLibrary("junit").get())
-
-                "implementation"(libs.findLibrary("androidx.tracing.ktx").get())
+//                "androidTestImplementation"(libs.findLibrary("kotlin.test").get())
+                "testImplementation"(platform(libs.findLibrary("junit-bom").get()))
+                "testImplementation"(libs.findLibrary("junit.jupiter.api").get())
+                "testRuntimeOnly"(libs.findLibrary("junit.jupiter.engine").get())
+//
+//                "implementation"(libs.findLibrary("androidx.tracing.ktx").get())
             }
         }
     }
