@@ -27,6 +27,7 @@ rootProject.name = "Material-productivity"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+include(":core:model")
 include(":core:navigation")
 
 check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {

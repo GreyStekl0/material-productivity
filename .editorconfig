@@ -1,5 +1,6 @@
 # https://editorconfig.org/
-# This configuration is used by ktlint when spotless invokes it
+# This configuration is used by ktlint.
 
 [*.{kt,kts}]
 ktlint_function_naming_ignore_when_annotated_with=Composable, Test
+ktlint_property_naming_constant_naming=pascal_case
