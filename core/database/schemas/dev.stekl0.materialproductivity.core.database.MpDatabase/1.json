@@ -1,0 +1,668 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "fcc07f61823aaf5f0dab0d1583f80d17",
+    "entities": [
+      {
+        "tableName": "projects",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `task_ids_json` TEXT NOT NULL, `backlog_task_ids_json` TEXT NOT NULL, `note_ids_json` TEXT NOT NULL, `is_archived` INTEGER NOT NULL, `is_hidden_from_menu` INTEGER NOT NULL, `is_enable_backlog` INTEGER NOT NULL, `icon` TEXT, `created` INTEGER, `modified` INTEGER, `folder_id` TEXT, `advanced_config_json` TEXT NOT NULL, `theme_json` TEXT NOT NULL, `issue_integration_configs_json` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taskIdsJson",
+            "columnName": "task_ids_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "backlogTaskIdsJson",
+            "columnName": "backlog_task_ids_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "noteIdsJson",
+            "columnName": "note_ids_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isArchived",
+            "columnName": "is_archived",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isHiddenFromMenu",
+            "columnName": "is_hidden_from_menu",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isEnableBacklog",
+            "columnName": "is_enable_backlog",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icon",
+            "columnName": "icon",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "modified",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "folderId",
+            "columnName": "folder_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "advancedConfigJson",
+            "columnName": "advanced_config_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "themeJson",
+            "columnName": "theme_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueIntegrationConfigsJson",
+            "columnName": "issue_integration_configs_json",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "project_folders",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `icon` TEXT, `parent_id` TEXT, `is_expanded` INTEGER NOT NULL, `created` INTEGER NOT NULL, `modified` INTEGER, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icon",
+            "columnName": "icon",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "parentId",
+            "columnName": "parent_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "isExpanded",
+            "columnName": "is_expanded",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "modified",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "tags",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `task_ids_json` TEXT NOT NULL, `icon` TEXT, `color` TEXT, `created` INTEGER, `modified` INTEGER, `advanced_config_json` TEXT NOT NULL, `theme_json` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taskIdsJson",
+            "columnName": "task_ids_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icon",
+            "columnName": "icon",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "color",
+            "columnName": "color",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "modified",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "advancedConfigJson",
+            "columnName": "advanced_config_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "themeJson",
+            "columnName": "theme_json",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "tasks",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `project_id` TEXT, `created` INTEGER NOT NULL, `modified` INTEGER, `notes` TEXT, `time_estimate` INTEGER NOT NULL, `time_spent` INTEGER NOT NULL, `time_spent_on_day_json` TEXT NOT NULL, `is_done` INTEGER NOT NULL, `done_on` INTEGER, `tag_ids_json` TEXT NOT NULL, `parent_id` TEXT, `sub_task_ids_json` TEXT NOT NULL, `attachments_json` TEXT NOT NULL, `remind_at` INTEGER, `reminder_id` TEXT, `due_day` TEXT, `due_with_time` INTEGER, `has_planned_time` INTEGER NOT NULL, `deadline_day` TEXT, `deadline_with_time` INTEGER, `deadline_remind_at` INTEGER, `repeat_cfg_id` TEXT, `hide_sub_tasks_mode` INTEGER, `issue_json` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "projectId",
+            "columnName": "project_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "modified",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "timeEstimate",
+            "columnName": "time_estimate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeSpent",
+            "columnName": "time_spent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeSpentOnDayJson",
+            "columnName": "time_spent_on_day_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDone",
+            "columnName": "is_done",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "doneOn",
+            "columnName": "done_on",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "tagIdsJson",
+            "columnName": "tag_ids_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentId",
+            "columnName": "parent_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "subTaskIdsJson",
+            "columnName": "sub_task_ids_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attachmentsJson",
+            "columnName": "attachments_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remindAt",
+            "columnName": "remind_at",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "reminderId",
+            "columnName": "reminder_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "dueDay",
+            "columnName": "due_day",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "dueWithTime",
+            "columnName": "due_with_time",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "hasPlannedTime",
+            "columnName": "has_planned_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deadlineDay",
+            "columnName": "deadline_day",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "deadlineWithTime",
+            "columnName": "deadline_with_time",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "deadlineRemindAt",
+            "columnName": "deadline_remind_at",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "repeatCfgId",
+            "columnName": "repeat_cfg_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "hideSubTasksMode",
+            "columnName": "hide_sub_tasks_mode",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "issueJson",
+            "columnName": "issue_json",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "notes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `project_id` TEXT, `content` TEXT NOT NULL, `is_pinned_to_today` INTEGER NOT NULL, `created` INTEGER NOT NULL, `modified` INTEGER NOT NULL, `img_url` TEXT, `is_locked` INTEGER NOT NULL, `background_color` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "projectId",
+            "columnName": "project_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "content",
+            "columnName": "content",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPinnedToToday",
+            "columnName": "is_pinned_to_today",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "modified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imgUrl",
+            "columnName": "img_url",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "isLocked",
+            "columnName": "is_locked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "backgroundColor",
+            "columnName": "background_color",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "reminders",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `remind_at` INTEGER NOT NULL, `title` TEXT NOT NULL, `type` TEXT NOT NULL, `related_id` TEXT NOT NULL, `recurring_config_json` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remindAt",
+            "columnName": "remind_at",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relatedId",
+            "columnName": "related_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recurringConfigJson",
+            "columnName": "recurring_config_json",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "task_repeat_configs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `project_id` TEXT, `title` TEXT, `tag_ids_json` TEXT NOT NULL, `is_paused` INTEGER NOT NULL, `quick_setting` TEXT NOT NULL, `repeat_cycle` TEXT NOT NULL, `repeat_every` INTEGER NOT NULL, `order_value` INTEGER NOT NULL, `default_estimate` INTEGER, `start_date` TEXT, `start_time` TEXT, `remind_at` TEXT, `last_task_creation` INTEGER, `last_task_creation_day` TEXT, `monday` INTEGER, `tuesday` INTEGER, `wednesday` INTEGER, `thursday` INTEGER, `friday` INTEGER, `saturday` INTEGER, `sunday` INTEGER, `monthly_week_of_month` INTEGER, `monthly_weekday` INTEGER, `notes` TEXT, `should_inherit_subtasks` INTEGER NOT NULL, `repeat_from_completion_date` INTEGER NOT NULL, `disable_auto_update_subtasks` INTEGER NOT NULL, `sub_task_templates_json` TEXT NOT NULL, `deleted_instance_dates_json` TEXT NOT NULL, `skip_overdue` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "projectId",
+            "columnName": "project_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "tagIdsJson",
+            "columnName": "tag_ids_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPaused",
+            "columnName": "is_paused",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quickSetting",
+            "columnName": "quick_setting",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "repeatCycle",
+            "columnName": "repeat_cycle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "repeatEvery",
+            "columnName": "repeat_every",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "order",
+            "columnName": "order_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defaultEstimate",
+            "columnName": "default_estimate",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "start_date",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "startTime",
+            "columnName": "start_time",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "remindAt",
+            "columnName": "remind_at",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastTaskCreation",
+            "columnName": "last_task_creation",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "lastTaskCreationDay",
+            "columnName": "last_task_creation_day",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "monday",
+            "columnName": "monday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "tuesday",
+            "columnName": "tuesday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "wednesday",
+            "columnName": "wednesday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "thursday",
+            "columnName": "thursday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "friday",
+            "columnName": "friday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "saturday",
+            "columnName": "saturday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "sunday",
+            "columnName": "sunday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "monthlyWeekOfMonth",
+            "columnName": "monthly_week_of_month",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "monthlyWeekday",
+            "columnName": "monthly_weekday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "shouldInheritSubtasks",
+            "columnName": "should_inherit_subtasks",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "repeatFromCompletionDate",
+            "columnName": "repeat_from_completion_date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "disableAutoUpdateSubtasks",
+            "columnName": "disable_auto_update_subtasks",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subTaskTemplatesJson",
+            "columnName": "sub_task_templates_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deletedInstanceDatesJson",
+            "columnName": "deleted_instance_dates_json",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skipOverdue",
+            "columnName": "skip_overdue",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fcc07f61823aaf5f0dab0d1583f80d17')"
+    ]
+  }
+}

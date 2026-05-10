@@ -3,7 +3,7 @@ package dev.stekl0.materialproductivity.core.model
 public data class Task(
     public val id: String,
     public val title: String,
-    public val projectId: String,
+    public val projectId: String?,
     public val created: Long,
     public val modified: Long? = null,
     public val notes: String? = null,
